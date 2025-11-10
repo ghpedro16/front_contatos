@@ -1,6 +1,6 @@
 'use strict'
 
-async function lerContatos(){
+export async function lerContatos(){
     const url = "https://bakcend-fecaf-render.onrender.com/contatos"
 
     const response = await fetch (url)
@@ -10,7 +10,7 @@ async function lerContatos(){
     return contatos
 }
 
-async function criarContato(contato){
+export async function criarContato(contato){
     const url = "https://bakcend-fecaf-render.onrender.com/contatos"
 
     const options = {
@@ -22,8 +22,6 @@ async function criarContato(contato){
     }
 
     const response = await fetch(url, options)
-
-    console.log(response.ok)
 
     return response.ok
 
