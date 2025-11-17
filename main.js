@@ -1,6 +1,6 @@
 'use strict'
 
-import { lerContatos } from "./script.js"
+import { lerContatos, criarContato } from "./script.js"
 
 async function carregarContatos() {
     const contatos = await lerContatos()
@@ -23,5 +23,24 @@ async function carregarContatos() {
     })
 }
 
+async function criarContatos(){
+    const contato = await criarContato()
+
+    
+}
+
+const btnNovoContato = document.getElementById('novo-contato');
+const btnCancelar = document.getElementById('cancelar')
+const mainElement = document.querySelector('main');
+
+btnNovoContato.addEventListener('click', () => {
+    mainElement.classList.remove('card-show');
+    mainElement.classList.add('form-show');
+});
+
+btnCancelar.addEventListener('click', () => {
+    mainElement.classList.remove('form-show');
+    mainElement.classList.add('card-show')
+});
 
 carregarContatos()
